@@ -1,0 +1,29 @@
+{
+    "measurements": [
+        {
+            "name": "weight", 
+            "value": "1.4"
+        }
+    ], 
+    "object_id": "1"
+}{
+    "measurements": [
+        {
+            "name": "weight", 
+            "value": "2.6"
+        }
+    ], 
+    "object_id": "2"
+}{
+    "measurements": [
+        {
+            "name": "weight", 
+            "value": "1.4"
+        }, 
+        {
+            "name": "friction", 
+            "value": "4.4"
+        }
+    ], 
+    "object_id": "1"
+}
