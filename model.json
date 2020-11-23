@@ -1,0 +1,16 @@
+{
+    "properties": [
+        {
+            "type": "continuous", 
+            "name": "mass"
+        }
+    ], 
+    "relations": [
+        {
+            "type": "linear-gaussian", 
+            "parameters": "[A:1 B:2 Sigma:3]", 
+            "parent": "density", 
+            "child": "linear-gaussian"
+        }
+    ]
+}
