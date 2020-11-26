@@ -1,29 +1,62 @@
-{
-    "measurements": [
-        {
-            "name": "weight", 
-            "value": "1.4"
-        }
-    ], 
-    "object_id": "1"
-}{
-    "measurements": [
-        {
-            "name": "weight", 
-            "value": "2.6"
-        }
-    ], 
-    "object_id": "2"
-}{
-    "measurements": [
-        {
-            "name": "weight", 
-            "value": "1.4"
-        }, 
-        {
-            "name": "friction", 
-            "value": "4.4"
-        }
-    ], 
-    "object_id": "1"
-}
+[
+    {
+        "measurements": [
+            {
+                "name": "weight", 
+                "value": "1.4"
+            }, 
+            {
+                "name": "friction", 
+                "value": "0.4"
+            }, 
+            {
+                "name": "density", 
+                "value": "0.5"
+            }, 
+            {
+                "name": "new", 
+                "value": "1"
+            }, 
+            {
+                "name": "test", 
+                "value": "2"
+            }
+        ], 
+        "object_id": "1"
+    }, 
+    {
+        "measurements": [
+            {
+                "name": "friction", 
+                "value": "0.8"
+            }, 
+            {
+                "name": "try", 
+                "value": "3"
+            }
+        ], 
+        "object_id": "2"
+    }, 
+    {
+        "measurements": [
+            {
+                "name": "asd", 
+                "value": "1"
+            }
+        ], 
+        "object_id": "3"
+    }, 
+    {
+        "measurements": [
+            {
+                "name": "friction", 
+                "value": "1"
+            }, 
+            {
+                "name": "weight", 
+                "value": "2"
+            }
+        ], 
+        "object_id": "4"
+    }
+]

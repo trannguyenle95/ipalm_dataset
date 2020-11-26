@@ -1,0 +1,7 @@
+from measurements import ObjectMeasurements
+cup1 = ObjectMeasurements("./meas.json","1")
+cup1.add_meas("weight","1.4")
+cup1.update()
+cup1.add_meas("friction","0.4")
+cup1.update()
+

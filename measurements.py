@@ -20,24 +20,28 @@ class Measurements:
 #######################################
 class ObjectMeasurements(object):
     def __init__(self,location,object_id):
+	self.measurements = []  
 	self.object_id = object_id
 	self.location = os.path.expanduser(location)
         self.load(self.location)
-	self.measurements = []  
+
     def load(self , location):
        if os.path.exists(location):
            self._load()
        else:
-	   self.db = {}
+	   self.db = []
        	   return True
 
     def _load(self):
-        self.db = json.load(open(self.location , "r"))
-        #self.measurements = self.db["measurements"]
-	self.measurements = []
+	self.db = json.load(open(self.location , "r"))
+	if self.object_id <= len(self.db):
+	   self.measurements = self.db[int(self.object_id)-1]["measurements"]
+	else:
+	   self.measurements = []
+
     def dumpdb(self):
         try:
-            json.dump(self.reprJSON(), open(self.location, "a"), indent=4, cls=ComplexEncoder)
+            json.dump(self.db, open(self.location, "w+"), indent=4, cls=ComplexEncoder)
             return True
         except:
             return False
@@ -59,7 +63,13 @@ class ObjectMeasurements(object):
     def add_meas(self, key, value):
 	meas_item = Measurements(key, value)
 	self.measurements.append(meas_item)
-    	self.dumpdb()
+
+    def update(self):
+	self.db.append(self.reprJSON())
+	self.dumpdb()
+
+    def modify(self):
+	json.dump(self.db, open(self.location, "w+"), indent=4, cls=ComplexEncoder)
 
     def __str__(self):
         return str(self.__class__) + ": " + str(self.__dict__)

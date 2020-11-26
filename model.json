@@ -3,13 +3,21 @@
         {
             "type": "continuous", 
             "name": "mass"
+        }, 
+        {
+            "type": "continuous", 
+            "name": "density"
+        }, 
+        {
+            "type": "catergorical", 
+            "name": "material"
         }
     ], 
     "relations": [
         {
             "type": "linear-gaussian", 
-            "parameters": "[A:1 B:2 Sigma:3]", 
             "parent": "density", 
+            "parameters": "[A:1 B:2 Sigma:3]", 
             "child": "linear-gaussian"
         }
     ]
