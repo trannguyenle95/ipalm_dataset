@@ -34,7 +34,7 @@ class ObjectMeasurements(object):
 
     def _load(self):
 	self.db = json.load(open(self.location , "r"))
-	if self.object_id <= len(self.db):
+	if int(self.object_id) <= len(self.db):
 	   self.measurements = self.db[int(self.object_id)-1]["measurements"]
 	else:
 	   self.measurements = []
@@ -61,15 +61,26 @@ class ObjectMeasurements(object):
         return True
     
     def add_meas(self, key, value):
-	meas_item = Measurements(key, value)
-	self.measurements.append(meas_item)
+        # else:
+        meas_item = Measurements(key, value)
+        self.measurements.append(meas_item)
 
     def update(self):
-	self.db.append(self.reprJSON())
-	self.dumpdb()
+        self.db.append(self.reprJSON())
+        self.dumpdb()
 
-    def modify(self):
-	json.dump(self.db, open(self.location, "w+"), indent=4, cls=ComplexEncoder)
+    def modify(self,key,value):
+        if any(dict_item['name'] == key for dict_item in self.measurements):
+            print("Key exists. New value is updated")
+            next(dict_item for dict_item in self.measurements if dict_item["name"] == key)["value"] = value
+        else:
+            meas_item = Measurements(key, value)
+            self.measurements.append(meas_item)
+            print("New value is added to the objects")
+
+            
+        json.dump(self.db, open(self.location, "w+"), indent=4, cls=ComplexEncoder)
+        self._load()
 
     def __str__(self):
         return str(self.__class__) + ": " + str(self.__dict__)

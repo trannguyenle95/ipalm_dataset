@@ -20,6 +20,14 @@
             {
                 "name": "test", 
                 "value": "2"
+            }, 
+            {
+                "name": "champ", 
+                "value": "yasuo"
+            }, 
+            {
+                "name": "champ2", 
+                "value": "riven"
             }
         ], 
         "object_id": "1"
@@ -32,7 +40,7 @@
             }, 
             {
                 "name": "try", 
-                "value": "3"
+                "value": "15"
             }
         ], 
         "object_id": "2"
