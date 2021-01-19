@@ -16,8 +16,8 @@ Add relations: (parent, child, type, parameters)
 # Use for measurements.py (Store real measurements for each object)
 ```
 from measurements import ObjectMeasurements
-object1 = ObjectMeasurements("./meas.json","1") #The 1st argument is that path to the json output file, 2nd is the object_id
-object2 = ObjectMeasurements("./meas.json","2") #The 1st argument is that path to the json output file
+object1 = ObjectMeasurements("./meas.json","1","cup") #The 1st argument is that path to the json output file, 2nd is the object_id
+object2 = ObjectMeasurements("./meas.json","2","box") #The 1st argument is that path to the json output file
 ```
 Create a new object and add properties + value: (name, value) 
 
@@ -27,11 +27,12 @@ object1.add_meas("weight","4") #All measurements need to be added before updatin
 object1.update() #Update the json file
 object2.add_meas("friction","0.9")
 object2.add_meas("weight","2") #All measurements need to be added before updating the json
-object1.update() #Update the json file
+object2.update() #Update the json file
 ```
 
 If you later want to update the existing object with new measurement:
 ```
-object1.modify("friction","0.8")
+object1.modify("friction","0.8") #Edit the value of the object
+object1.modify("density","2.3") #Add new prop to object
 ```
 

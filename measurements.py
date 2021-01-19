@@ -19,8 +19,9 @@ class Measurements:
 
 #######################################
 class ObjectMeasurements(object):
-    def __init__(self,location,object_id):
+    def __init__(self,location,object_id,object_name):
 	self.measurements = []  
+	self.object_name = object_name
 	self.object_id = object_id
 	self.location = os.path.expanduser(location)
         self.load(self.location)
@@ -68,6 +69,8 @@ class ObjectMeasurements(object):
     def update(self):
         self.db.append(self.reprJSON())
         self.dumpdb()
+        self._load()
+
 
     def modify(self,key,value):
         if any(dict_item['name'] == key for dict_item in self.measurements):
@@ -86,7 +89,7 @@ class ObjectMeasurements(object):
         return str(self.__class__) + ": " + str(self.__dict__)
 
     def reprJSON(self):
-        return dict(object_id=self.object_id,measurements=self.measurements) 
+        return dict(object_name=self.object_name,object_id=self.object_id,measurements=self.measurements) 
 
 
 
