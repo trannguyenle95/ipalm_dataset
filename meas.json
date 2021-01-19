@@ -11,23 +11,15 @@
             }, 
             {
                 "name": "density", 
-                "value": "0.5"
+                "value": "2.4"
             }, 
             {
                 "name": "new", 
                 "value": "1"
             }, 
             {
-                "name": "test", 
-                "value": "2"
-            }, 
-            {
-                "name": "champ", 
-                "value": "yasuo"
-            }, 
-            {
-                "name": "champ2", 
-                "value": "riven"
+                "name": "new2", 
+                "value": "2.4"
             }
         ], 
         "object_id": "1"
@@ -66,5 +58,18 @@
             }
         ], 
         "object_id": "4"
+    }, 
+    {
+        "measurements": [
+            {
+                "name": "friction", 
+                "value": "0.7"
+            }, 
+            {
+                "name": "weight", 
+                "value": "5.7"
+            }
+        ], 
+        "object_id": "5"
     }
 ]
