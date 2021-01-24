@@ -1,6 +1,7 @@
 # IPALM Dataset
 
 This repository provides a framework to generate an object dataset with physical properties and their relation as shown in figure below. The dataset then can be used for different purposes such as: grasp sampling, exploration action selection, etc. 
+
 <img src="figures/bayesnet.png" width="500"/>
 
 The framework includes two main components:
